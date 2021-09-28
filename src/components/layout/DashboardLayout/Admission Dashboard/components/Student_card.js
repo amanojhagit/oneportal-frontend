@@ -15,6 +15,7 @@ const Student_card=({studentData,refresh,setRefresh})=>{
 		{
 			headers:{"Authorization" : "Token "+localStorage.getItem('Token')}
 	  	}).then(response=>{
+		
 		  console.log(response.msg)
 		  setRefresh(!refresh)
 		  toast("Deleted",{type:'error'})
@@ -27,7 +28,6 @@ const Student_card=({studentData,refresh,setRefresh})=>{
 	  })
 		
     }
-
     const conf_std=(event)=>{
         event.preventDefault();
 		Axios.get("http://oneportal.pythonanywhere.com/admissions/confirm_admission/"+studentData.id,
