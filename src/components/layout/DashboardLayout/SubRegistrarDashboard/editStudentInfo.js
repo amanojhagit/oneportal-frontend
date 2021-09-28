@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
-import { withRouter } from "react-router";
 import { toast,ToastContainer } from "react-toastify";
 import './style.css';
-import { render } from "@testing-library/react";
-import Axios from "axios";
-import { studata } from "./components/Student_card";
 
 
 const EditStudentInfo=(props)=>{
@@ -29,33 +25,8 @@ const EditStudentInfo=(props)=>{
         setPrg(result.program)
     },[refresh])
 
-    const changeHandler=(event)=>{
-        const formData = new FormData(event.currentTarget);
-		event.preventDefault(); 
-		var obj = {}
-		for (let [key, value] of formData.entries()) {
-			obj[key] = value;
-		}
-		console.log(obj);
-        
-    }
+    
 
-    // const submit = (event) => {
-	// 	const formData = new FormData(event.currentTarget);
-	// 	event.preventDefault(); 
-	// 	var obj = {}
-	// 	for (let [key, value] of formData.entries()) {
-	// 		obj[key] = value;
-	// 	}
-	// 	console.log(obj);
-	// 	Axios.post("http://oneportal.pythonanywhere.com/admissions/add_single_student",
-	// 		(obj),
-	// 		{headers:{"Authorization" : "Token "+localStorage.getItem('Token')}}).then(response=>{
-    //         console.log(response)
-    //     }).catch(error=>{
-    //             console.log(error)
-    //     })
-	//   };
 
     const save=()=>{
         toast("Saved",{type:"success"})
@@ -83,7 +54,7 @@ const EditStudentInfo=(props)=>{
 								<h3 className="text-white justify-content-center text-center pt-2">Edit Student</h3>
 								<div className="row justify-content-center p-1 ml-2 mt-5">
                                     
-                                    <table className="w-75 tableStyle" onChange={changeHandler} type="submit">
+                                    <table className="w-75 tableStyle" type="submit">
                                         <tbody>
                                         <tr className="tablerow">
                                             <th className="font-weight-bold w-25 hello">Name :</th>

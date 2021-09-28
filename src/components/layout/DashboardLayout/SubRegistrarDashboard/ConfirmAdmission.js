@@ -12,22 +12,6 @@ const ConfirmAdmission = (data) => {
 	const [stu_data,setStu_data]=useState([]);
 	const [refresh,setRefresh]=useState(true);
 
-	// const submit = (event) => {
-	// 	const formData = new FormData(event.currentTarget);
-	// 	event.preventDefault();
-	// 	var obj = {}
-	// 	for (let [key, value] of formData.entries()) {
-	// 		obj[key] = value;
-	// 	}
-	// 	console.log(obj);
-	// 	Axios.post("http://oneportal.pythonanywhere.com/admissions/add_single_student",
-	// 		(obj),
-	// 		{headers:{"Authorization" : "Token "+localStorage.getItem('Token')}}).then(response=>{
-    //         console.log(response)
-    //     }).catch(error=>{
-    //             console.log(error)
-    //     })
-	//   };
 
 
 	  useEffect(()=>{
@@ -61,9 +45,6 @@ const ConfirmAdmission = (data) => {
 	  const re_fresh=()=>{
 		  setRefresh(!refresh)
 	  }
-	  const edit_stu=()=>{
-		<EditStudentInfo/>
-	}
 
 
     return (

@@ -12,7 +12,6 @@ const Student_card=({studentData,refresh,setRefresh})=>{
     const del_std=(event,value)=>{
         event.preventDefault();
 		console.log(studentData.id)
-		// console.log(value)
 		
         Axios.get("http://oneportal.pythonanywhere.com/sub_registrar/sub_delete_student/"+studentData.id,
 		{
@@ -22,8 +21,6 @@ const Student_card=({studentData,refresh,setRefresh})=>{
 		  console.log(response.msg)
 		  setRefresh(!refresh)
 		  toast("Deleted",{type:'error'})
-		//   get_student()
-		//   toast("Deleted",{type:'error'})
 		 
 	  }).catch(error=>{
 		  console.log(error)
@@ -43,8 +40,6 @@ const Student_card=({studentData,refresh,setRefresh})=>{
 		  console.log(response.msg)
 		  setRefresh(!refresh)
 		  toast("Confirmed",{type:'success'})
-		//   get_student()
-		//   toast("Deleted",{type:'error'})
 		 
 	  }).catch(error=>{
 		  console.log(error)
@@ -53,25 +48,10 @@ const Student_card=({studentData,refresh,setRefresh})=>{
 		
     }
 
-	const edit_stu=(stdata)=>{
-		// studata.Provider.value="Lund";
-		// console.log(stdata)
-		// // console.log(studata)
-		// localStorage.setItem('stu_id',studentData.id)
-		// window.location='/sub_registrar/editStudentInfo'
-		// console.log(studentData)
-		// toast("yes",{type:"success"})	
-		
-	}
-
-        
-    
 
 return (
-	<studata.Provider value={studentData.id}>
 	<div className="col-xl-4 col-lg-4 col-md-6 col-sm-12">
 		<div className=" m-2 jumbotron font-weight-bold">
-			
 			<h5 className="text-center text-dark font-weight-bold">Name: {studentData.name}</h5>
 			<h6 className="text-center text-dark font-weight-bold">Mob: +91 7999697546</h6>
 			<h6 className="text-center text-dark font-weight-bold">Opted for: B.Tech CSE</h6>
@@ -86,7 +66,6 @@ return (
 			</div>
 		</div>
 	</div>
-	</studata.Provider>
 // </div>
 )
 }
